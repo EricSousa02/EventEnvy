@@ -82,6 +82,25 @@ body {
     hue-rotate(32deg) brightness(98%) contrast(92%);
 }
 
+*::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
+}
+
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
   .wrapper {
