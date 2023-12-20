@@ -11,7 +11,7 @@ export async function POST(req: Request) {
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
  
   if (!WEBHOOK_SECRET) {
-    throw new Error('Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local')
+    throw new Error('Adicione WEBHOOK_SECRET do Clerk Dashboard a .env ou .env.local')
   }
  
   // Get the headers
@@ -22,7 +22,7 @@ export async function POST(req: Request) {
  
   // If there are no headers, error out
   if (!svix_id || !svix_timestamp || !svix_signature) {
-    return new Response('Error occured -- no svix headers', {
+    return new Response('Ocorreu um erro -- não há cabeçalhos svix', {
       status: 400
     })
   }
@@ -44,8 +44,8 @@ export async function POST(req: Request) {
       "svix-signature": svix_signature,
     }) as WebhookEvent
   } catch (err) {
-    console.error('Error verifying webhook:', err);
-    return new Response('Error occured', {
+    console.error('Erro ao verificar o webhook:', err);
+    return new Response('Ocorreu um erro', {
       status: 400
     })
   }

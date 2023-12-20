@@ -22,13 +22,13 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      {/* My Tickets */}
+      {/* Os meus bilhetes */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
-          <h3 className='h3-bold text-center sm:text-left'>My Tickets</h3>
+          <h3 className='h3-bold text-center sm:text-left'>Os meus bilhetes</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/#events">
-              Explore More Events
+             Explorar mais eventos
             </Link>
           </Button>
         </div>
@@ -37,8 +37,8 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
       <section className="wrapper my-8">
         <Collection 
           data={orderedEvents}
-          emptyTitle="No event tickets purchased yet"
-          emptyStateSubtext="No worries - plenty of exciting events to explore!"
+          emptyTitle="Ainda não foram adquiridos bilhetes para o evento"
+          emptyStateSubtext="Não se preocupe - há muitos eventos interessantes para explorar!"
           collectionType="My_Tickets"
           limit={3}
           page={ordersPage}
@@ -47,13 +47,13 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
         />
       </section>
 
-      {/* Events Organized */}
+      {/* Eventos organizados */}
       <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center py-5 md:py-10">
         <div className="wrapper flex items-center justify-center sm:justify-between">
-          <h3 className='h3-bold text-center sm:text-left'>Events Organized</h3>
+          <h3 className='h3-bold text-center sm:text-left'>Eventos organizados</h3>
           <Button asChild size="lg" className="button hidden sm:flex">
             <Link href="/events/create">
-              Create New Event
+            Criar novo evento
             </Link>
           </Button>
         </div>
@@ -62,8 +62,8 @@ const ProfilePage = async ({ searchParams }: SearchParamProps) => {
       <section className="wrapper my-8">
         <Collection 
           data={organizedEvents?.data}
-          emptyTitle="No events have been created yet"
-          emptyStateSubtext="Go create some now"
+          emptyTitle="Ainda não foram criados eventos"
+          emptyStateSubtext="Crie alguns agora"
           collectionType="Events_Organized"
           limit={3}
           page={eventsPage}

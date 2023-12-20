@@ -25,7 +25,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
         style={{backgroundImage: `url(${event.imageUrl})`}}
         className="flex-center flex-grow bg-gray-50 bg-cover bg-center text-grey-500"
       />
-      {/* IS EVENT CREATOR ... */}
+      {/* É O CRIADOR DO EVENTO ... */}
 
       {isEventCreator && !hidePrice && (
         <div className="absolute right-2 top-2 flex flex-col gap-4 rounded-xl bg-white p-3 shadow-sm transition-all">
@@ -42,7 +42,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
       > 
        {!hidePrice && <div className="flex gap-2">
           <span className="p-semibold-14 w-min rounded-full bg-green-100 px-4 py-1 text-green-60">
-            {event.isFree ? 'FREE' : `$${event.price}`}
+            {event.isFree ? 'Gratis' : `$${event.price}`}
           </span>
           <p className="p-semibold-14 w-min rounded-full bg-grey-500/10 px-4 py-1 text-grey-500 line-clamp-1">
             {event.category.name}
@@ -64,7 +64,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
 
           {hasOrderLink && (
             <Link href={`/orders?eventId=${event._id}`} className="flex gap-2">
-              <p className="text-primary-500">Order Details</p>
+              <p className="text-primary-500">Detalhes do pedido</p>
               <Image src="/assets/icons/arrow.svg" alt="search" width={10} height={10} />
             </Link>
           )}

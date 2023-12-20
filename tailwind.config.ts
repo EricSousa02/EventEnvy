@@ -23,6 +23,7 @@ module.exports = withUt({
           500: '#81B1FA',
           50: ' #F6F8FD',
           DEFAULT: '#81B1FA',
+          secondary: '#EDAEF9',
           foreground: 'hsl(var(--primary-foreground))',
         },
         coral: {
