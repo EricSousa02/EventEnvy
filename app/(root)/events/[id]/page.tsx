@@ -17,13 +17,13 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
   return (
     <>
     <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain">
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl ">
         <Image 
           src={event.imageUrl}
           alt="hero image"
           width={1000}
           height={1000}
-          className="h-full min-h-[300px] object-cover object-center"
+          className="h-full min-h-[300px] object-cover object-center rounded-lg bg-primary-500"
         />
 
         <div className="flex w-full flex-col gap-8 p-5 md:p-10">
@@ -51,13 +51,13 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
           <div className="flex flex-col gap-5">
             <div className='flex gap-2 md:gap-3'>
-              <Image src="/assets/icons/calendar.svg" alt="calendar" width={32} height={32} />
-              <div className="p-medium-16 lg:p-regular-20 flex flex-wrap items-center">
+              <Image src="/assets/icons/calendar.svg" alt="calendario" width={32} height={32} />
+              <div className="text-sm flex flex-wrap flex-col items-center">
                 <p>
                   {formatDateTime(event.startDateTime).dateOnly} - {' '}
                   {formatDateTime(event.startDateTime).timeOnly}
                 </p>
-                <p>
+                <p >
                   {formatDateTime(event.endDateTime).dateOnly} -  {' '}
                   {formatDateTime(event.endDateTime).timeOnly}
                 </p>
@@ -66,12 +66,12 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
             <div className="p-regular-20 flex items-center gap-3">
               <Image src="/assets/icons/location.svg" alt="location" width={32} height={32} />
-              <p className="p-medium-16 lg:p-regular-20">{event.location}</p>
+              <p className="text-sm">{event.location}</p>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <p className="p-bold-20 text-grey-600">O que aprenderá:</p>
+            <p className="p-bold-20 text-grey-600">O que haverá:</p>
             <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
             <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
           </div>

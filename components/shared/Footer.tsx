@@ -5,13 +5,14 @@ const Footer = () => {
   return (
     <footer className="border-t">
       <div className="flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row">
-        <Link href='/'>
+        <Link href="/" className="flex-center gap-2">
           <Image 
-            src="/assets/images/logo.svg"
-            alt="logo"
-            width={128}
-            height={38}
+            src="/assets/images/logo.png" width={32} height={32}
+            alt="Events Ally logo" 
           />
+           <span className="bg-gradient-to-r from-primary-500 to-primary-secondary text-transparent bg-clip-text font-semibold">
+            Events Ally
+           </span>
         </Link>
 
         <p>2023 Events Ally. Todos os direitos reservados.</p>

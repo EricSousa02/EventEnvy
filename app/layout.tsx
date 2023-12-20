@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: 'Events Ally',
   description: 'Events Ally is a platform for event management.',
   icons: {
-    icon: '/assets/images/logo.svg'
+    icon: '/assets/images/logo.png'
   }
 }
 

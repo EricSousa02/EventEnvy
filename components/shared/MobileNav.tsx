@@ -25,12 +25,15 @@ const MobileNav = () => {
           />
         </SheetTrigger>
         <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
-          <Image 
-            src="/assets/images/logo.svg"
-            alt="logo"
-            width={128}
-            height={38}
-          />
+          <div className="w-36 flex-center gap-2">
+            <Image 
+              src="/assets/images/logo.png" width={32} height={32}
+              alt="Events Ally logo" 
+            />
+            <span className="ml-2 bg-gradient-to-r from-primary-500 to-primary-secondary text-transparent bg-clip-text font-semibold">
+              Events Ally
+            </span>
+          </div>
           <Separator className="border border-gray-50" />
           <NavItems />
         </SheetContent>
