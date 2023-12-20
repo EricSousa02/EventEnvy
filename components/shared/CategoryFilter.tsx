@@ -31,7 +31,7 @@ const CategoryFilter = () => {
   const onSelectCategory = (category: string) => {
       let newUrl = '';
 
-      if(category && category !== 'All') {
+      if(category && category !== 'Todos') {
         newUrl = formUrlQuery({
           params: searchParams.toString(),
           key: 'category',
@@ -50,10 +50,10 @@ const CategoryFilter = () => {
   return (
     <Select onValueChange={(value: string) => onSelectCategory(value)}>
       <SelectTrigger className="select-field">
-        <SelectValue placeholder="Category" />
+        <SelectValue placeholder="Categorias" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="All" className="select-item p-regular-14">All</SelectItem>
+        <SelectItem value="Todos" className="select-item p-regular-14">Todos</SelectItem>
 
         {categories.map((category) => (
           <SelectItem value={category.name} key={category._id} className="select-item p-regular-14">
