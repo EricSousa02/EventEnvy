@@ -12,20 +12,21 @@ import NavItems from "./NavItems"
 
 
 const MobileNav = () => {
+  
   return (
-    <nav className="md:hidden">
+    <nav className="md:hidden ">
       <Sheet>
-        <SheetTrigger className="align-middle">
+        <SheetTrigger className="align-middle ">
           <Image 
             src="/assets/icons/menu.svg"
             alt="menu"
             width={24}
             height={24}
-            className="cursor-pointer"
+            className="cursor-pointer dark:invert dark:filter dark:grayscale"
           />
         </SheetTrigger>
-        <SheetContent className="flex flex-col gap-6 bg-white md:hidden">
-          <div className="w-36 flex-center gap-2">
+        <SheetContent className="flex flex-col gap-6 bg-white md:hidden dark:bg-dark-2 dark:text-light-1 dark:border-dark-2">
+          <div className="w-36 flex-center gap-2 ">
             <Image 
               src="/assets/images/logo.png" width={32} height={32}
               alt="Events Ally logo" 
@@ -34,7 +35,7 @@ const MobileNav = () => {
               Events Ally
             </span>
           </div>
-          <Separator className="border border-gray-50" />
+          <Separator className="border border-gray-50 dark:border-primary-500" />
           <NavItems />
         </SheetContent>
       </Sheet>

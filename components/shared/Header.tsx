@@ -4,11 +4,12 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import NavItems from "./NavItems"
 import MobileNav from "./MobileNav"
+import ThemeSwitcher from "./ThemeSwitcher"
 
 const Header = () => {
   return (
-    <header className="w-full border-b">
-      <div className="wrapper flex items-center justify-between">
+    <header className="w-full border-b dark:bg-dark-1 dark:border-dark-3">
+      <div className="wrapper flex items-center justify-between ">
         <Link href="/" className="w-36 flex-center gap-2">
           <Image 
             src="/assets/images/logo.png" width={32} height={32}
@@ -20,12 +21,17 @@ const Header = () => {
         </Link>
 
         <SignedIn>
-          <nav className="md:flex-between hidden w-full max-w-xs">
+          <nav className="md:flex-between hidden w-full max-w-xs dark:text-light-1">
             <NavItems />
           </nav>
         </SignedIn>
 
-        <div className="flex w-32 justify-end gap-3">
+        
+
+        <div className="flex items-center justify-end gap-3 ">
+
+        <ThemeSwitcher/>
+        
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
             <MobileNav />

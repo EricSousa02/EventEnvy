@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <footer className="border-t">
+    <footer className="border-t dark:border-dark-3 dark:bg-dark-1">
       <div className="flex-center wrapper flex-between flex flex-col gap-4 p-5 text-center sm:flex-row">
         <Link href="/" className="flex-center gap-2">
           <Image 
@@ -15,7 +15,7 @@ const Footer = () => {
            </span>
         </Link>
 
-        <p>2023 Events Ally. Todos os direitos reservados.</p>
+        <p className="dark:text-light-1">2023 Events Ally. Todos os direitos reservados.</p>
       </div>
     </footer>
   )
