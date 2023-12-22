@@ -1,9 +1,11 @@
 import CheckoutButton from '@/components/shared/CheckoutButton';
 import Collection from '@/components/shared/Collection';
+import { Button } from '@/components/ui/button';
 import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions'
 import { formatDateTime } from '@/lib/utils';
 import { SearchParamProps } from '@/types'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) => {
   const event = await getEventById(id);
@@ -16,74 +18,88 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
   return (
     <>
-    <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain dark:bg-dark-2 dark:text-light-1">
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl ">
-        <Image 
-          src={event.imageUrl}
-          alt="hero image"
-          width={1000}
-          height={1000}
-          className="h-full min-h-[300px] object-cover object-center rounded-lg bg-gray-400"
-        />
+      <section className="flex justify-center bg-primary-50 bg-dotted-pattern bg-contain dark:bg-dark-2 dark:text-light-1">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:max-w-7xl ">
+          <Image
+            src={event.imageUrl}
+            alt="hero image"
+            width={1000}
+            height={1000}
+            className="h-full min-h-[300px] object-cover object-center rounded-lg bg-gray-400"
+          />
 
-        <div className="flex w-full flex-col gap-8 p-5 md:p-10">
-          <div className="flex flex-col gap-6">
-            <h2 className='h2-bold'>{event.title}</h2>
+          <div className="flex w-full flex-col gap-8 p-5 md:p-10">
+            <div className="flex flex-col gap-6">
+              <h2 className='h2-bold'>{event.title}</h2>
 
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <div className="flex gap-3">
-                <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700">
-                  {event.isFree ? 'Gratis' : `R$${event.price}`}
-                </p>
-                <p className=" dark:text-light-1 p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500">
-                  {event.category.name}
-                </p>
-              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <div className="flex gap-3">
+                  <p className="p-bold-20 rounded-full bg-green-500/10 px-5 py-2 text-green-700">
+                    {event.isFree ? 'Gratis' : `R$${event.price}`}
+                  </p>
+                  <p className=" dark:text-light-1 p-medium-16 rounded-full bg-grey-500/10 px-4 py-2.5 text-grey-500">
+                    {event.category.name}
+                  </p>
+                </div>
 
-              <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
-                Por{' '}
-                <span className="text-primary-500">{event.organizer.firstName} {event.organizer.lastName}</span>
-              </p>
-            </div>
-          </div>
-
-          <CheckoutButton event={event} />
-
-          <div className="flex flex-col gap-5 ">
-            <div className='flex gap-2 md:gap-3'>
-              <Image src="/assets/icons/calendar.svg" alt="calendario" width={32} height={32} />
-              <div className="text-sm flex flex-wrap flex-col align-center">
-                <p>
-                  {formatDateTime(event.startDateTime).dateOnly} - {' '}
-                  {formatDateTime(event.startDateTime).timeOnly}
-                </p>
-                <p >
-                  {formatDateTime(event.endDateTime).dateOnly} -  {' '}
-                  {formatDateTime(event.endDateTime).timeOnly}
+                <p className="p-medium-18 ml-2 mt-2 sm:mt-0">
+                  Por{' '}
+                  <span className="text-primary-500">{event.organizer.firstName} {event.organizer.lastName}</span>
                 </p>
               </div>
             </div>
 
-            <div className="p-regular-20 flex items-center gap-3">
-              <Image src="/assets/icons/location.svg" alt="location" width={32} height={32} />
-              <p className="text-sm">{event.location}</p>
-            </div>
-          </div>
 
-          <div className="flex flex-col gap-2">
-            <p className="p-bold-20 text-grey-600 dark:text-gray-400">Descrição:</p>
-            <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
-            <p className="p-medium-16 lg:p-regular-18 truncate text-primary-500 underline">{event.url}</p>
+            <div className="flex flex-col gap-5 ">
+              <div className='flex gap-2 md:gap-3'>
+                <Image src="/assets/icons/calendar.svg" alt="calendario" width={32} height={32} />
+                <div className="text-sm flex flex-wrap flex-col align-center">
+                  <p>
+                    {formatDateTime(event.startDateTime).dateOnly} - {' '}
+                    {formatDateTime(event.startDateTime).timeOnly}
+                  </p>
+                  <p >
+                    {formatDateTime(event.endDateTime).dateOnly} -  {' '}
+                    {formatDateTime(event.endDateTime).timeOnly}
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-regular-20 flex items-center gap-3">
+                <Image src="/assets/icons/location.svg" alt="location" width={32} height={32} />
+                <p className="text-sm">{event.location}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center gap-2">
+              <p className="p-bold-20 text-grey-600 dark:text-gray-400">Descrição:</p>
+              <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
+
+
+            </div>
+
+            <div className="flex gap-2 justify-between flex-wrap items-center">
+              <Button asChild className="button mx-auto rounded-full bg-primary-secondary hover:bg-primary-secondary2" size="lg">
+                <Link href={event.url} target="_blank" rel="noopener noreferrer">
+                  Link do Evento
+                </Link>
+              </Button>
+
+<div className="mx-auto">
+              <CheckoutButton event={event} />
+              </div>
+            </div>
+
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* EVENTOS com a mesma categoria */}
-    <section className="wrapper dark:text-light-1 my-8 flex flex-col gap-8 md:gap-12">
-      <h2 className="h2-bold">Eventos relacionados</h2>
+      {/* EVENTOS com a mesma categoria */}
+      <section className="wrapper dark:text-light-1 my-8 flex flex-col gap-8 md:gap-12">
+        <h2 className="h2-bold">Eventos relacionados</h2>
 
-      <Collection 
+        <Collection
           data={relatedEvents?.data}
           emptyTitle="Nenhum evento encontrado"
           emptyStateSubtext="Volte mais tarde"
@@ -92,7 +108,7 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
           page={searchParams.page as string}
           totalPages={relatedEvents?.totalPages}
         />
-    </section>
+      </section>
     </>
   )
 }
