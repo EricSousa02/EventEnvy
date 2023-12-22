@@ -9,7 +9,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-/* Para remover a aparência padrão em alguns navegadores */
+
 
 
 @layer base {
@@ -111,8 +111,86 @@ body {
   background: #7878a3;
 }
 
+
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+   
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 2.625em;  
+
+  }
+
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    color: #757575;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
+
+  @media screen and (max-width: 600px) {
+    *::-webkit-scrollbar {
+      @apply hidden;
+    }
+  }
+
+  *::-webkit-scrollbar {
+    @apply w-3 h-3 rounded-lg;
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-light-1 md:dark:bg-dark-2;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-dark-2 md:dark:bg-primary-500 rounded-full;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-2 dark:bg-primary-500;
+  }
+
   .wrapper {
     @apply max-w-7xl lg:mx-auto p-5 md:px-10 xl:px-0 w-full;
   }
@@ -251,7 +329,7 @@ body {
   }
 
   .select-item {
-    @apply py-3 cursor-pointer  focus:bg-primary-50;
+    @apply py-3 cursor-pointer focus:bg-primary-50;
   }
 
   .toggle-switch {

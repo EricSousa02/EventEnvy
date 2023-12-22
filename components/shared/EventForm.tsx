@@ -22,6 +22,8 @@ import { useRouter } from "next/navigation"
 import { createEvent, updateEvent } from "@/lib/actions/event.actions"
 import { IEvent } from "@/lib/database/models/event.model"
 
+import ptBR from 'date-fns/locale/pt-BR';
+
 
 type EventFormProps = {
   userId: string
@@ -210,6 +212,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         timeInputLabel="Time:"
                         dateFormat="dd/MM/yyyy h:mm aa"
                         wrapperClassName="datePicker"
+                        locale={ptBR}
                       />
                     </div>
 
@@ -241,6 +244,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         timeInputLabel="Time:"
                         dateFormat="dd/MM/yyyy h:mm aa"
                         wrapperClassName="datePicker"
+                        locale={ptBR}
                       />
                     </div>
 

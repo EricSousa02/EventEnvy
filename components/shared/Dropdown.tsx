@@ -54,7 +54,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
       <SelectTrigger className="select-field">
         <SelectValue placeholder="Categorias" />
       </SelectTrigger>
-      <SelectContent>
+      <SelectContent className="dark:border-none">
         {categories.length > 0 && categories.map((category) => (
           <SelectItem key={category._id} value={category._id} className="select-item p-regular-14">
             {category.name}
@@ -63,7 +63,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
 
         <AlertDialog>
           <AlertDialogTrigger className="p-medium-14 flex w-full rounded-sm py-3 pl-8 text-primary-500 hover:bg-primary-50 focus:text-primary-500">Adicionar nova categoria</AlertDialogTrigger>
-          <AlertDialogContent className="bg-white">
+          <AlertDialogContent className="bg-white dark:bg-dark-2 dark:text-light-1">
             <AlertDialogHeader>
               <AlertDialogTitle>Nova Categoria</AlertDialogTitle>
               <AlertDialogDescription>
@@ -71,7 +71,7 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancelar</AlertDialogCancel>
+              <AlertDialogCancel className="dark:bg-light-1 dark:text-dark-2">Cancelar</AlertDialogCancel>
               <AlertDialogAction onClick={() => startTransition(handleAddCategory)}>Adicionar</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
