@@ -13,17 +13,20 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Events Ally',
-  description: 'Events Ally is a platform for event management.',
+  description: 'Events Ally é uma plataforma de gestão de eventos.',
   icons: {
     icon: '/assets/images/logo.png'
   }
 }
+
+
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <ClerkProvider localization={ptBR}>
       <html lang="pt">
