@@ -28,7 +28,7 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
         <Image src="/assets/icons/delete.svg" alt="editar" width={20} height={20} />
       </AlertDialogTrigger>
 
-      <AlertDialogContent className="dark:border-none bg-white dark:bg-dark-2 dark:text-light-1">
+      <AlertDialogContent className="border-none bg-white dark:bg-dark-2 dark:text-light-1">
         <AlertDialogHeader>
           <AlertDialogTitle>Tem a certeza de que pretende deletar?</AlertDialogTitle>
           <AlertDialogDescription className="p-regular-16 text-grey-600">
