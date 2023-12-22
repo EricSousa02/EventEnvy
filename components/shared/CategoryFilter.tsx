@@ -48,7 +48,7 @@ const CategoryFilter = () => {
   }
 
   return (
-    <Select onValueChange={(value: string) => onSelectCategory(value)} className="dark:border-none">
+    <Select onValueChange={(value: string) => onSelectCategory(value)}>
       <SelectTrigger className="select-field dark:bg-dark-2 dark:border-none">
         <SelectValue placeholder="Categorias" />
       </SelectTrigger>
