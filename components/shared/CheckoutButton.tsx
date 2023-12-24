@@ -21,7 +21,7 @@ const CheckoutButton = ({ event }: { event: IEvent }) => {
           <SignedOut>
             <Button asChild className="button rounded-full" size="lg">
               <Link href="/sign-in">
-               Pegar ingresso
+                Entrar
               </Link>
             </Button>
           </SignedOut>

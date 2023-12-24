@@ -67,26 +67,26 @@ const EventDetails = async ({ params: { id }, searchParams }: SearchParamProps) 
 
               <div className="p-regular-20 flex items-center gap-3">
                 <Image src="/assets/icons/location.svg" alt="location" width={32} height={32} />
-                <p className="text-sm">{event.location}</p>
+                <p className="text-sm mr-auto">{event.location}</p>
               </div>
             </div>
 
             <div className="flex flex-col items-center gap-2">
               <p className="p-bold-20 text-grey-600 dark:text-gray-400">Descrição:</p>
-              <p className="p-medium-16 lg:p-regular-18">{event.description}</p>
+              <p className="p-medium-16 lg:p-regular-18 text-justify">{event.description}</p>
 
 
             </div>
 
             <div className="flex gap-2 justify-between flex-wrap items-center">
-              <Button asChild className="button mx-auto rounded-full bg-primary-secondary hover:bg-primary-secondary2" size="lg">
-                <Link href={event.url} target="_blank" rel="noopener noreferrer">
-                  Link do Evento
+              <Button asChild className="button md:mx-0 mx-auto rounded-full bg-primary-secondary hover:bg-primary-secondary2" size="lg">
+                <Link href={event.url} target="_blank" rel="noopener noreferrer" className="text-sm">
+                  Explorar
                 </Link>
               </Button>
 
-<div className="mx-auto">
-              <CheckoutButton event={event} />
+              <div className="md:mx-0 mx-auto">
+                <CheckoutButton event={event} />
               </div>
             </div>
 

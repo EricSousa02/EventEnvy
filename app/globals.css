@@ -325,7 +325,7 @@ body {
   }
 
   .button {
-    @apply rounded-full h-[50px] p-regular-16;
+    @apply rounded-full font-semibold h-[50px] p-regular-16;
   }
 
   .select-item {
