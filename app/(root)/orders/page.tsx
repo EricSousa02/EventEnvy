@@ -33,8 +33,9 @@ const Orders = async ({ searchParams }: SearchParamProps) => {
             </thead>
             <tbody>
               {orders && orders.length === 0 ? (
-                <tr className="border-b">
-                  <td colSpan={5} className="py-4 text-center text-gray-500">
+                
+                <tr className="border-none rounded-lg overflow-hidden">
+                  <td colSpan={5} className="py-4 text-center text-gray-500 dark:bg-dark-2 bg-primary-50">
                     Não foram encontrados pedidos.
                   </td>
                 </tr>

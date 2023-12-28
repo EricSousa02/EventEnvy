@@ -17,6 +17,34 @@ Bem-vindo ao Events-Ally, a sua nova plataforma para descobrir, participar e org
 - **SVIX:** Integração para eventos em tempo real.
 - **Zod:** Validador de esquemas para garantir dados consistentes.
 
+## Features do Projeto 🦉
+
+- **Autenticação (CRUD) com Clerk:** Gerenciamento de usuários por meio do Clerk, garantindo uma autenticação segura e eficiente.
+
+- **Criar Eventos:** Os usuários podem criar facilmente novos eventos, fornecendo detalhes essenciais como título, data, localização e informações adicionais.
+
+- **Ler Eventos:** Acesso fácil a uma visão detalhada de todos os eventos, permitindo que os usuários explorem especificidades do evento, incluindo descrições, horários e informações relacionadas.
+
+- **Atualizar Eventos:** Capacitando os usuários a modificar dinamicamente os detalhes do evento, garantindo que as informações do evento permaneçam precisas e atualizadas.
+
+- **Excluir Eventos:** Um processo direto para remover eventos do sistema, dando aos administradores a capacidade de gerenciar e organizar a plataforma de forma eficaz.
+
+- **Eventos (CRUD):** Funcionalidade abrangente para criar, ler, atualizar e excluir eventos, proporcionando aos usuários total controle sobre o gerenciamento de eventos.
+
+- **Eventos Relacionados:** Conecta inteligentemente eventos relacionados e os exibe na página de detalhes do evento, tornando-a mais envolvente para os usuários.
+
+- **Eventos Organizados:** Organização eficiente de eventos, garantindo uma exibição estruturada e amigável ao usuário, ou seja, mostrando eventos criados pelo usuário no perfil do usuário.
+
+- **Pesquisa e Filtro:** Capacitação dos usuários com um sistema robusto de pesquisa e filtro, permitindo que eles encontrem facilmente os eventos que correspondem às suas preferências.
+
+- **Nova Categoria:** Categorização dinâmica permite a adição contínua de novas categorias de eventos, mantendo sua plataforma adaptável.
+
+- **Checkout e Pagamento com Stripe:** Transações de pagamento suaves e seguras usando o Stripe, aprimorando a experiência do usuário durante o processo de checkout.
+
+- **Pedidos de Eventos:** Sistema abrangente de gerenciamento de pedidos, fornecendo uma visão clara de todas as transações relacionadas a eventos.
+
+- **Pesquisa de Pedidos:** Funcionalidade rápida e eficiente de pesquisa para pedidos, facilitando o rastreamento e gerenciamento.
+
 ## Como Contribuir
 
 Sinta-se à vontade para contribuir para o desenvolvimento do Evently! Basta seguir o link do [repositório](https://github.com/EricSousa02/Events-Ally) e fazer suas sugestões ou enviar pull requests.
