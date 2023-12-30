@@ -1,4 +1,4 @@
-# Events-Ally -- Aplicativo de Eventos
+# Events-Ally - Aplicativo de Eventos
 
 Bem-vindo ao Events-Ally, a sua nova plataforma para descobrir, participar e organizar eventos de maneira fácil e interativa! Este projeto é uma aplicação que permite aos usuários explorar eventos, criar novos e pegar ou comprar ingressos para seus eventos.
 
