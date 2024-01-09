@@ -30,6 +30,7 @@ const HeroCarousel = () => {
             height={1484}
             className="object-cover w-full h-full"
             key={image.alt}
+            priority
           />
         ))}
       </Carousel>
