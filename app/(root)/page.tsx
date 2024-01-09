@@ -1,5 +1,6 @@
 import CategoryFilter from '@/components/shared/CategoryFilter';
 import Collection from '@/components/shared/Collection'
+import HeroCarousel from '@/components/shared/HeroCarousel';
 import Search from '@/components/shared/Search';
 import { Button } from '@/components/ui/button'
 import { getAllEvents } from '@/lib/actions/event.actions';
@@ -21,16 +22,21 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
   return (
     <>
-      <section className="bg-primary-50 bg-dotted-pattern bg-contain ">
-        <div className='bg-primary-50 bg-hero-bg bg-cover py-5 md:py-10 dark:bg-dark-2'>
-          <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
-            <div className="flex flex-col justify-center gap-8">
-              <h1 className="h1-bold dark:text-light-1">
+      <section className="bg-primary-50 bg-dotted-pattern bg-contain relative overflow-hidden">
+
+        <div className="hidden md:dark:block hero-carousel-container absolute top-0 left-0 w-full h-full z-10">
+          <HeroCarousel />
+        </div>
+
+        <div className='bg-primary-50 bg-hero-bg bg-cover py-5 md:py-10 dark:bg-dark-2 relative z-1'>
+          <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0 relative z-1">
+            <div className="flex flex-col justify-center gap-8 relative z-1">
+              <h1 className="h1-bold  dark:text-light-1 z-20">
                 Celebre seus <span className="bg-gradient-to-r from-primary-500 to-primary-secondary text-transparent bg-clip-text">Eventos</span> em nossa plataforma.
               </h1>
 
-              <p className="p-regular-20 md:p-regular-24 dark:text-light-1">Desperte a magia dos momentos especiais! Na nossa plataforma, transformamos seus eventos em experiências inesquecíveis.</p>
-              <Button size="lg" asChild className="button w-full sm:w-fit">
+              <p className="p-regular-20 md:p-regular-24 dark:text-light-1 z-20">Desperte a magia dos momentos especiais! Na nossa plataforma, transformamos seus eventos em experiências inesquecíveis.</p>
+              <Button size="lg" asChild className="button w-full sm:w-fit z-20 text-dark-2">
                 <Link href="#events">
                   Explore Agora
                 </Link>
@@ -42,7 +48,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
               alt="hero"
               width={1000}
               height={1000}
-              className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
+              className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh] z-20"
             />
           </div>
         </div>
